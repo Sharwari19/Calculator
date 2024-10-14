@@ -33,3 +33,46 @@ function appendNumber(number){
     updateDisplay();
 }
 
+
+// function to perform calculation 
+// this is called when '=' is pressed or when chaining operations
+function evaluate() {
+    if(currentOperator === null || shouldResetDisplay) return; // do nothing if there's no operation to perform
+    secondOperand = parseFloat(displayValue); // set the second operand to the current display value
+    let result;
+    switch(currentOperator) {
+        case '+':
+            result = firstOperand + secondOperand;
+            break;
+        case '-':
+            result = firstOperand - secondOperand;
+            break;
+        case '*':
+            result = firstOperand * secondOperand;
+            break;
+        case '/':
+            if(secondOperand === 0) {
+                // handling division by zero
+                displayValue = 'Error: Division by zero';
+                updateDisplay();
+                return;
+            }
+            result = firstOperand / secondOperand;
+            break;
+        case '%':
+            result = firstOperand % secondOperand;
+            break;
+    }
+    displayValue = roundResult(result).toString(); // Round and convert the result to a string
+    currentOperator = null; 
+    shouldResetDisplay = true;
+    updateDisplay();
+}
+
+
+// function to round the result to avoid floating point precision issues
+// This rounds to 10 decimal places
+function roundResult(number){
+    return Math.round(number * 1e10) / 1e10; // 1e10 - scientific notation for 10^10
+}
+
