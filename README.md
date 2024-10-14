@@ -1,113 +1,67 @@
 # JavaScript Calculator Project
 
-### Project Overview
+### Overview
 
-This project is a simple calculator built using HTML, CSS, and JavaScript. It performs basic mathematical operations like addition, subtraction, multiplication, and division. The calculator supports number input, operator selection, and evaluates the results upon clicking the equals (=) button. Additionally, the project incorporates several features to ensure a smooth user experience, including a clear button, a decimal point, error handling for invalid operations (e.g., division by zero), and support for keyboard input.
+This project is a simple yet functional calculator implemented in JavaScript. It provides basic arithmetic operations and includes features like chaining operations, keyboard support, and error handling.
 
 ### Features
 
-### Basic Functionalities
+* Basic arithmetic operations: addition, subtraction, multiplication, division, and modulo
+* Decimal point support
+* Chaining of operations
+* Keyboard support for improved accessibility
+* Error handling (e.g., division by zero)
+* Backspace functionality for input correction
+* Clear function to reset the calculator
+* Responsive design (assuming CSS is properly implemented)
 
-1. #### Addition, Subtraction, Multiplication, and Division:
-
-* The calculator supports all basic arithmetic operations.
-* Each operation consists of two numbers and an operator.
-
-2. #### Operate Function:
-
-* A central operate() function takes the selected operator and two numbers and performs the calculation by calling the respective arithmetic functions (add(), subtract(), multiply(), divide()).
-
-3. #### Number and Operator Input:
-
-* Buttons for digits (0-9) and basic math operators (+, -, *, /) allow users to input numbers and operations.
-
-* When an operation is completed, the result is used as the first number for the next operation.
-
-4. #### Display:
-
-* A calculator screen shows the current input, intermediate results, and final output.
-
-5. #### Clear Function:
-
-* The Clear (C) button resets the calculator, allowing users to start a fresh calculation.
-
-### Additional Features
-
-1. #### Chaining Operations:
-
-* The calculator automatically performs sequential operations. For example, if you input 12 + 7 - 5, it first calculates 12 + 7 = 19 and then evaluates 19 - 5 = 14.
-
-2. #### Decimal Input:
-
-* Users can enter floating-point numbers using the decimal (.) button, ensuring no more than one decimal point is included in a number.
-
-3. #### Error Handling:
-
-* Division by zero is handled with an error message (e.g., "Cannot divide by 0") without crashing the calculator.
-
-4. #### Rounding Results:
-
-* Long decimal numbers are rounded to fit within the display, ensuring a clean UI.
-
-5. #### Backspace:
-
-* A backspace button allows users to remove the last digit or operator entered.
-
-6. #### Keyboard Support:
-
-* The calculator can also be controlled via the keyboard, where:
-
-    * Digits 0-9 and the decimal . are recognized.
-    * Operators (+, -, *, /, =) work as they would   with button clicks.
-    * Backspace erases the last input, and Escape clears the display.
-
-
-### Gotchas/Bugs Handled
-
-* The calculator ensures only one pair of numbers and an operator is processed at a time.
-* Pressing the equals button without providing complete input (number, operator, number) is handled safely.
-* The decimal button is disabled after a decimal point is entered for the current number.
-
-
-## Installation and Usage
-
-To use the calculator:
-
-1. Clone or Download the repository to your local machine:
-
-```
-
-git clone https://github.com/yourusername/calculator.git
-
-```
-
-2. Open the index.html file in your browser.
-
-3. Interact with the calculator using the on-screen buttons or your keyboard for input.
 
 ## Project Structure
 
-```
-.
-├── index.html         # The HTML structure of the calculator
-├── style.css          # CSS file to style the calculator interface
-└── script.js          # JavaScript file containing the calculator logic
+The project consists of three main files:
 
-```
+1. index.html: The HTML structure of the calculator
+2. styles.css: The CSS file for styling the calculator
+3. calculator.js: The JavaScript file containing the calculator's logic
 
-## Key JavaScript Functions
+### Setup
 
-1. add(a, b): Returns the sum of a and b.
+1. Clone the repository or download the project files.
+2. Open the index.html file in a web browser.
 
-2. subtract(a, b): Returns the difference between a and b.
+No additional setup or dependencies are required as this is a client-side JavaScript project.
 
-3. multiply(a, b): Returns the product of a and b.
+### Usage
 
-4. divide(a, b): Returns the result of dividing a by 
-b. Returns an error message if b is 0.
+#### Using the GUI
 
-5. operate(operator, num1, num2): Takes an operator and two numbers, calling the respective function based on the operator.
+* Click on the number buttons to input numbers.
+* Click on the operator buttons (+, -, *, /, %) to choose an operation.
+* Click the equals (=) button to see the result.
+* Use the decimal (.) button to input decimal numbers.
+* The AC button clears all input and resets the calculator.
+* The backspace (←) button removes the last entered character.
 
-6. populateDisplay(): Updates the calculator display when a number or operator is pressed.
+#### Using the Keyboard
 
-7. clearCalculator(): Resets the calculator's state.
+The calculator also supports keyboard input:
+
+* Numbers 0-9: Input numbers
+* +, -, *, /: Operators
+* %: Modulo
+* .: Decimal point
+* Enter or =: Evaluate the expression
+* Backspace: Remove the last character
+* Escape: Clear all (same as AC button)
+
+### Implementation Details
+
+* The calculator uses a state-based approach to keep track of operations and operands.
+* It handles floating-point precision issues by rounding results to 10 decimal places.
+* The display is treated as the source of truth for the current input.
+* Operations are chained by evaluating the previous operation before starting a new one.
+
+### Contributing
+
+Contributions to improve the calculator are welcome. Please feel free to submit a pull request or open an issue to discuss potential changes/additions.
+
