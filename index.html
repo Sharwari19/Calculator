@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator App</title>
+    <link href="styles.css" rel="stylesheet"/>
+</head>
+<body>
+    <div id="root">   
+        <div class="input-field">
+            <input type = 'text' name ="input" value="0">
+        </div>  
+
+        <div class="key-container">
+
+            <div class="operation-keys">
+                <button id="divide">/</button>
+                <button id="multiply">*</button>
+                <button id="subtract">-</button>
+                <button id="plus">+</button>
+                <button id="equal">=</button>
+            </div>
+
+            <div class="number-plus-other">
+                <div class="number-keys">
+                    <div class="row-one">
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                    </div>
+        
+                    <div class="row-two">
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                    </div>
+                    
+                    <div class="row-three">
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                    </div>
+        
+                    <div class="row-four">
+                        <button id="zero">0</button>
+                        <button id="decimal">.</button>
+                    </div>
+                </div>
+    
+                <div class="extra-keys">
+                    <button id="all-clear">AC</button>
+                    <button id="backspace">&#8592;</button>
+                    <button id="modulo">%</button>
+                </div>
+            </div>
+    </div>
+    <script src="calculator.js"></script>
+</body>
+</html>
