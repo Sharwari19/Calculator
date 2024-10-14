@@ -33,6 +33,15 @@ function appendNumber(number){
     updateDisplay();
 }
 
+// function to set the current operator 
+// this also handles chaining of operations
+function setOperator(operator){
+    if(currentOperator !== null) evaluate(); // if there's a pending operation, evaluate it first
+    firstOperand = parseFloat(displayValue); 
+    currentOperator = operator;
+    shouldResetDisplay = true; // prepare to input the second operand
+}
+
 
 // function to perform calculation 
 // this is called when '=' is pressed or when chaining operations
@@ -75,4 +84,31 @@ function evaluate() {
 function roundResult(number){
     return Math.round(number * 1e10) / 1e10; // 1e10 - scientific notation for 10^10
 }
+
+// function to clear all calculator state
+// this resets the calculator to its initial state
+function clear() {
+    displayValue = '0';
+    firstOperand = null;
+    secondOperand = null;
+    currentOperator = null;
+    shouldResetDisplay = false;
+    updateDisplay();
+}
+
+
+// function to handle backspace operation
+// this removes the last character from the display
+function backspace() {
+    if(shouldResetDisplay) return; // do nothing if we're about to reset the display anyway
+
+    displayValue = displayValue.slice(0, -1); // remove the last character;
+
+    if(displayValue === '')
+    {
+        displayValue = '0';
+    }
+    updateDisplay();
+}
+
 
