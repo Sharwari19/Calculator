@@ -8,60 +8,32 @@
 </head>
 <body>
     <!--Main container for entire calculator-->
-    <div id="root" class="theme-classic">   
+    <div id="calculator">   
         <!--Input field to display the current number or result-->
-        <div class="input-field">
-            <input type = 'text' name ="input" value="0">
-        </div>  
+        <input type = 'text' class="display"  value="0" disabled>
 
         <!--Container for all the calculator keys -->
-        <div class="key-container">
-
-            <!-- Container for operation keys(/, *, -, +, =) -->
-            <div class="operation-keys">
-                <button id="divide">/</button>
-                <button id="multiply">*</button>
-                <button id="subtract">-</button>
-                <button id="plus">+</button>
-                <button id="equal">=</button>
-            </div>
-
-            <!-- Container for number keys and other functionalities-->
-            <div class="number-plus-other">
-                <!-- Container for all number keys -->
-                <div class="number-keys">
-
-                    <div class="row-one">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                    </div>
-        
-                    <div class="row-two">
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                    </div>
-                    
-                    <div class="row-three">
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
-                    </div>
-        
-                    <div class="row-four">
-                        <button id="zero">0</button>
-                        <button id="decimal">.</button>
-                    </div>
-                </div>
-    
-                <!-- Container for extra functionality keys -->
-                <div class="extra-keys">
-                    <button id="all-clear">AC</button>      <!-- All Clear -->
-                    <button id="backspace">&#8592;</button> <!-- Backspace -->
-                    <button id="modulo">%</button>           <!-- Modulo -->
-                </div>
-            </div>
+        <div class="buttons">
+            <button id="all-clear" class="operator">AC</button>      <!-- All Clear -->
+            <button id="backspace" class="operator">&#8592;</button> <!-- Backspace -->
+            <button id="modulo" class="operator">%</button>           <!-- Modulo -->
+            <button id="divide" class="operator">/</button>
+            <button class="number">7</button>
+            <button class="number">8</button>
+            <button class="number">9</button>
+            <button id="multiply" class="operator">*</button>
+            <button class="number">4</button>
+            <button class="number">5</button>
+            <button class="number">6</button>
+            <button id="subtract" class="operator">-</button>
+            <button class="number">1</button>
+            <button class="number">2</button>
+            <button class="number">3</button>
+            <button id="plus" class="operator">+</button>
+            <button class="number" id="zero">0</button>
+            <button id="decimal">.</button>
+            <button id="equal" class="operator">=</button>
+           
         </div>
     </div>
     <script src="calculator.js"></script>
