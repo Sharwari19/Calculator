@@ -50,7 +50,6 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-    margin-top: 20px;
 }
 
 button{
@@ -83,6 +82,12 @@ button:hover {
     color: var(--text-color);
 }
 
+.operation-keys {
+    grid-column: span 4; /* Make operation keys span across 4 columns */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* 5 columns for operation keys */
+}
+
 .operation-keys button,
 .extra-keys button {
     background-color: var(--secondary-color);
@@ -94,13 +99,26 @@ button:hover {
     color: var(--text-color);
 }
 
-.number-plus-other
+.number-keys {
+    grid-column: span 3; /* Span across 3 columns */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for number keys */
+}
+
+.extra-keys {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns for extra keys */
+    grid-column: span 4; /* Span across 4 columns */
+}
+
+
+/* .number-plus-other
 {
     grid-column: span 3;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 10px;
-}
+} */
 
 /* .extra-keys 
 {
