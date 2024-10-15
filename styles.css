@@ -11,6 +11,11 @@
 body {
     background-color: var(--bg-color);
     font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 /* Styles for main container of the calculator */
@@ -19,11 +24,10 @@ body {
     width: 350px;
     /* height: 550px; */
     color: var(--text-color);
-    margin: 50px auto;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     display: flex;
-    gap: 15px;
+    gap: 10px;
     flex-direction: column;
     padding: 20px;
 }
@@ -38,6 +42,7 @@ body {
     color: var(--text-color);
     border: none;
     text-align: right;
+    margin-bottom: 20px;
 }
 
 .key-container
@@ -45,6 +50,7 @@ body {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
+    margin-top: 20px;
 }
 
 button{
@@ -58,6 +64,18 @@ button{
     border: none;
     cursor: pointer;
     transition: var(--transition);
+}
+
+button#all-clear {
+    grid-column: span 2;
+}
+
+button#equal {
+    grid-column: span 2;
+}
+
+button#backspace {
+    grid-column: span 2;
 }
 
 button:hover {
@@ -84,7 +102,7 @@ button:hover {
     gap: 10px;
 }
 
-.extra-keys 
+/* .extra-keys 
 {
     grid-column: span 3;
     display: grid;
@@ -98,7 +116,7 @@ button:hover {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 10px;
-}
+} */
 
 @media (max-width: 400px) {
     #root {
