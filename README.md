@@ -1,6 +1,6 @@
 # JavaScript Calculator Project
 
-## Live Preview - https://sharwari19.github.io/Calculator/
+ Live Preview - https://sharwari19.github.io/Calculator/
 
 ### Overview
 
