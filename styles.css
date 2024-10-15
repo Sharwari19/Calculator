@@ -18,31 +18,19 @@ body {
     height: 100vh;
 }
 
-/* Styles for main container of the calculator */
 #root{
     background-color: var(--primary-color);
-    width: 350px;
+    width: 400px;
     /* height: 550px; */
     color: var(--text-color);
-    margin: 50px auto;
+    margin: 0 auto;
+    margin-top: 80px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     display: flex;
     gap: 15px;
     flex-direction: column;
-    padding: 20px;
-}
-
-.input-field input{
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-    font-size: 36px;
-    border-radius: 10px;
-    background-color: var(--secondary-color);
-    color: var(--text-color);
-    border: none;
-    text-align: right;
+    padding: 15px;
 }
 
 .key-container
@@ -73,25 +61,41 @@ button:hover {
     color: var(--text-color);
 }
 
-.operation-keys button,
-.extra-keys button {
+.input-field {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 36px;
+    border-radius: 10px;
     background-color: var(--secondary-color);
     color: var(--text-color);
+    border: none;
+    text-align: right;
 }
 
-.operation-keys button:last-child {
-    background-color: var(--secondary-color);
-    color: var(--text-color);
+.input-field input {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    font-size: 50px;
+    border-radius: 10px;
 }
 
 .operation-keys button
 {
     display: flex;
     flex-direction: column;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
     justify-content: center;
     align-items: center;
-    /* font-size: 40px; */
+    font-size: 40px;
     
+}
+
+.operation-keys button:last-child {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
 }
 
 .number-plus-other
@@ -120,6 +124,8 @@ button:hover {
 #decimal
 {
     flex: 2;
+    font-weight: bold;
+    font-size: large;
 }
 
 .extra-keys button
@@ -129,10 +135,7 @@ button:hover {
     font-size: 35px;
 }
 
-
-@media (max-width: 400px) {
-    #root {
-        width: 90%;
-        margin:  20px auto;
-    }
+#backspace
+{
+    font-weight: bold;
 }
