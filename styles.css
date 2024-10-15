@@ -24,10 +24,11 @@ body {
     width: 350px;
     /* height: 550px; */
     color: var(--text-color);
+    margin: 50px auto;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     display: flex;
-    gap: 10px;
+    gap: 15px;
     flex-direction: column;
     padding: 20px;
 }
@@ -42,15 +43,15 @@ body {
     color: var(--text-color);
     border: none;
     text-align: right;
-    margin-bottom: 20px;
 }
 
 .key-container
 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 4px;
+    margin: 0px;
 }
 
 button{
@@ -61,21 +62,10 @@ button{
     color: var(--button-text);
     font-weight: bold;
     font-size: 24px;
+    font-weight: bold;
     border: none;
     cursor: pointer;
     transition: var(--transition);
-}
-
-button#all-clear {
-    grid-column: span 2;
-}
-
-button#equal {
-    grid-column: span 2;
-}
-
-button#backspace {
-    grid-column: span 2;
 }
 
 button:hover {
@@ -94,30 +84,51 @@ button:hover {
     color: var(--text-color);
 }
 
+.operation-keys button
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* font-size: 40px; */
+    
+}
+
 .number-plus-other
 {
-    grid-column: span 3;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    display: flex;
+    flex-direction: column-reverse;
 }
 
-
-/* .extra-keys 
+.number-plus-other button
 {
-    grid-column: span 3;
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    font-size: 30px;
 }
 
-.extra-keys 
+.number-keys
 {
-    grid-column: span 4;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-} */
+    display: flex;
+    flex-direction: column;
+}
+
+.row-four
+{
+    display: flex;
+    gap: 4px;
+}
+
+#decimal
+{
+    flex: 2;
+}
+
+.extra-keys button
+{
+    justify-content: center;
+    align-items: center;
+    font-size: 35px;
+}
+
 
 @media (max-width: 400px) {
     #root {
