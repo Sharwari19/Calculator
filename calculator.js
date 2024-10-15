@@ -6,15 +6,15 @@ let displayValue = '0';
 let shouldResetDisplay = false;
 
 // DOM element selections
-const display = document.querySelector('input');
-const buttons = document.querySelectorAll('.number-keys button, #decimal');
-const operatorButtons = document.querySelectorAll('#plus, #subtract, #multiply, #divide, #modulo');
-const equalButton = document.querySelector('#equal');
-const clearButton = document.querySelector('#all-clear');
-const backspaceButton = document.querySelector('#backspace');
+const display = document.querySelector('.display');
+const buttons = document.querySelectorAll('.buttons button');
+// const operatorButtons = document.querySelectorAll('#plus, #subtract, #multiply, #divide, #modulo');
+// const equalButton = document.querySelector('#equal');
+// const clearButton = document.querySelector('#all-clear');
+// const backspaceButton = document.querySelector('#backspace');
+
 
 // function to update calculator's display
-// This is separated into its own function for easy maintenance and to avoid repetition
 function updateDisplay() {
     display.value = displayValue;
 }
@@ -126,26 +126,31 @@ function backspace() {
 }
 
 
-// Event listeners for number and decimal buttons
+// Event listeners for buttons
 buttons.forEach(button => {
-    if(button.id === 'decimal') {
-        button.addEventListener('click', appendDecimal);
-    }
-    else 
-    {
-        button.addEventListener('click', () => appendNumber(button.textContent));
-    }
+    button.addEventListener('click', () => {
+        const buttonText = button.textContent;
+        if(!isNaN(buttonText) || buttonText === '.') {
+            if(buttonText === '.') {
+                appendDecimal();
+            }
+            else {
+                appendNumber(buttonText);
+            }
+        } else if(['+', '-', '*', '/', '%'].includes(buttonText)) {
+            setOperator(buttonText);
+        } else if (buttonText === '=') {
+            evaluate();
+        } else if (buttonText === 'AC') {
+            clear();
+        } else if (buttonText === '←') {
+            backspace();
+        }
+    });
+   
 });
 
-// Event listeners for operator buttons
-operatorButtons.forEach(button => {
-    button.addEventListener('click', () => setOperator(button.textContent));
-});
 
-// event listeners for other buttons
-equalButton.addEventListener('click', evaluate);
-clearButton.addEventListener('click', clear);
-backspaceButton.addEventListener('click', backspace);
 
 // keyboard support
 // This allows users to use their keyboard for input, improving accessibility and user experience
