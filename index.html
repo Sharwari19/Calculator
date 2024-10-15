@@ -7,13 +7,17 @@
     <link href="styles.css" rel="stylesheet"/>
 </head>
 <body>
-    <div id="root">   
+    <!--Main container for entire calculator-->
+    <div id="root" class="theme-classic">   
+        <!--Input field to display the current number or result-->
         <div class="input-field">
             <input type = 'text' name ="input" value="0">
         </div>  
 
+        <!--Container for all the calculator keys -->
         <div class="key-container">
 
+            <!-- Container for operation keys(/, *, -, +, =) -->
             <div class="operation-keys">
                 <button id="divide">/</button>
                 <button id="multiply">*</button>
@@ -22,8 +26,11 @@
                 <button id="equal">=</button>
             </div>
 
+            <!-- Container for number keys and other functionalities-->
             <div class="number-plus-other">
+                <!-- Container for all number keys -->
                 <div class="number-keys">
+
                     <div class="row-one">
                         <button>1</button>
                         <button>2</button>
@@ -48,12 +55,14 @@
                     </div>
                 </div>
     
+                <!-- Container for extra functionality keys -->
                 <div class="extra-keys">
-                    <button id="all-clear">AC</button>
-                    <button id="backspace">&#8592;</button>
-                    <button id="modulo">%</button>
+                    <button id="all-clear">AC</button>      <!-- All Clear -->
+                    <button id="backspace">&#8592;</button> <!-- Backspace -->
+                    <button id="modulo">%</button>           <!-- Modulo -->
                 </div>
             </div>
+        </div>
     </div>
     <script src="calculator.js"></script>
 </body>

@@ -1,5 +1,31 @@
+.theme-classic {
+    --background: #f0f0f0;
+    --display-bg: #ffffff;
+    --display-text: #000000;
+    --button-bg: #e0e0e0;
+    --button-text: #000000;
+    --button-hover: #d0d0d0;
+    --operator-bg: #ff9500;
+    --operator-text: #ffffff;
+    --operator-hover: #ff8000;
+}
+
+
+.theme-pastel {
+  --background: #ffe5e5;
+  --display-bg: #ffffff;
+  --display-text: #4a4a4a;
+  --button-bg: #ffd1dc;
+  --button-text: #4a4a4a;
+  --button-hover: #ffb3c6;
+  --operator-bg: #b19cd9;
+  --operator-text: #ffffff;
+  --operator-hover: #9f85cf;
+}
+
+
 #root{
-    background-color: black;
+    background-color: var(--background);
     width: 400px;
     /* height: 550px; */
     color: whitesmoke;
