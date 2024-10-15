@@ -1,5 +1,7 @@
 # JavaScript Calculator Project
 
+## Live Preview - https://sharwari19.github.io/Calculator/
+
 ### Overview
 
 This project is a simple yet functional calculator implemented in JavaScript. It provides basic arithmetic operations and includes features like chaining operations, keyboard support, and error handling.
